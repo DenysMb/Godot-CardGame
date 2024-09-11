@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://8esgxu3y3ub8"]
+
+[ext_resource type="Texture2D" uid="uid://bggy5sgy7h40x" path="res://assets/units/dragon.png" id="1_e47ui"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_55be4"]
+
+[resource]
+script = ExtResource("2_55be4")
+illustration = ExtResource("1_e47ui")
+card_name = "Draco"
+type = "Dragon"
+description = ""
+gold = 4
+attack = 4
+health = 4

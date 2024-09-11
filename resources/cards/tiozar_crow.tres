@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://hninewxj2o7r"]
+
+[ext_resource type="Texture2D" uid="uid://bpj8gpqgnd0fn" path="res://assets/units/necromancer.png" id="1_jnvmy"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_5wv2v"]
+
+[resource]
+script = ExtResource("2_5wv2v")
+illustration = ExtResource("1_jnvmy")
+card_name = "Tiozar Crow"
+type = "Mage"
+description = "Invoke 2 Skeleton 1/1"
+gold = 4
+attack = 2
+health = 4

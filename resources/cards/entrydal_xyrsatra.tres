@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bwdynsamfbpt6"]
+
+[ext_resource type="Texture2D" uid="uid://17jb1m4kytc0" path="res://assets/units/elf.png" id="1_4tay0"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_j2lyc"]
+
+[resource]
+script = ExtResource("2_j2lyc")
+illustration = ExtResource("1_4tay0")
+card_name = "Entrydal Xyrsatra"
+type = "Elf"
+description = ""
+gold = 2
+attack = 2
+health = 3

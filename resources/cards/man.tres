@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bcuctjgwu2he7"]
+
+[ext_resource type="Texture2D" uid="uid://bpyycya0ciso6" path="res://assets/units/man.png" id="1_4m1f0"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_pp2aj"]
+
+[resource]
+script = ExtResource("2_pp2aj")
+illustration = ExtResource("1_4m1f0")
+card_name = "Man"
+type = "Human"
+description = ""
+gold = 1
+attack = 2
+health = 1

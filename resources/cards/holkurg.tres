@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dgpolkl5hnxeb"]
+
+[ext_resource type="Texture2D" uid="uid://b0ln3w4quy8ox" path="res://assets/units/orc.png" id="1_3iafd"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_s4j5f"]
+
+[resource]
+script = ExtResource("2_s4j5f")
+illustration = ExtResource("1_3iafd")
+card_name = "Holkurg"
+type = "Orc"
+description = ""
+gold = 3
+attack = 3
+health = 4

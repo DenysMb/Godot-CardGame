@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://laxq6qid4stu"]
+
+[ext_resource type="Texture2D" uid="uid://dkbnama4tgxag" path="res://assets/units/woman.png" id="1_6n5nl"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_4pytw"]
+
+[resource]
+script = ExtResource("2_4pytw")
+illustration = ExtResource("1_6n5nl")
+card_name = "Woman"
+type = "Human"
+description = ""
+gold = 1
+attack = 1
+health = 2

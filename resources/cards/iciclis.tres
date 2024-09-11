@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cjxl8557dqw2m"]
+
+[ext_resource type="Texture2D" uid="uid://osugeelvp8yr" path="res://assets/units/elemental.png" id="1_baddr"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_homgp"]
+
+[resource]
+script = ExtResource("2_homgp")
+illustration = ExtResource("1_baddr")
+card_name = "Iciclis"
+type = "Elemental"
+description = ""
+gold = 2
+attack = 3
+health = 2

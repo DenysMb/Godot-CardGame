@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c6pegpxkoppm2"]
+
+[ext_resource type="Texture2D" uid="uid://0qjupx445hj0" path="res://assets/units/ent.png" id="1_ra2om"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_jwqng"]
+
+[resource]
+script = ExtResource("2_jwqng")
+illustration = ExtResource("1_ra2om")
+card_name = "Pinebeard"
+type = "Ent"
+description = ""
+gold = 5
+attack = 4
+health = 6

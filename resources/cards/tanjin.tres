@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://5au1rov0bneu"]
+
+[ext_resource type="Texture2D" uid="uid://dfx7rp0xqh7bw" path="res://assets/units/troll.png" id="1_gcw5e"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_pn6fy"]
+
+[resource]
+script = ExtResource("2_pn6fy")
+illustration = ExtResource("1_gcw5e")
+card_name = "Tanjin"
+type = "Troll"
+description = ""
+gold = 2
+attack = 3
+health = 2

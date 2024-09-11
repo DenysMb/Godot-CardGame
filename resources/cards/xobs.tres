@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://2og6x46amh0v"]
+
+[ext_resource type="Texture2D" uid="uid://u0e0ipi8gnro" path="res://assets/units/goblin.png" id="1_7mbdb"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_wuyhj"]
+
+[resource]
+script = ExtResource("2_wuyhj")
+illustration = ExtResource("1_7mbdb")
+card_name = "Xobs"
+type = "Goblin"
+description = ""
+gold = 1
+attack = 2
+health = 2

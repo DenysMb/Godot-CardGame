@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://di4crlm4viwbc"]
+
+[ext_resource type="Texture2D" uid="uid://b6md72qjopd77" path="res://assets/units/mage.png" id="1_8efau"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_3tebe"]
+
+[resource]
+script = ExtResource("2_3tebe")
+illustration = ExtResource("1_8efau")
+card_name = "Strazahr"
+type = "Mage"
+description = ""
+gold = 2
+attack = 2
+health = 3

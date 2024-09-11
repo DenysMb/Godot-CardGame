@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c8nxrexcmp7sh"]
+
+[ext_resource type="Texture2D" uid="uid://cq4d24lmnt1ah" path="res://assets/units/fairy.png" id="1_o17lw"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_o5klh"]
+
+[resource]
+script = ExtResource("2_o5klh")
+illustration = ExtResource("1_o17lw")
+card_name = "Poppy Turtlebeam"
+type = "Fairy"
+description = "Give +2 health to an ally"
+gold = 2
+attack = 1
+health = 3

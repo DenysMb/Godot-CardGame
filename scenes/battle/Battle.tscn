@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://dg2g80c6wqwlu"]
+
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_6tu2r"]
+[ext_resource type="Texture2D" uid="uid://dbvofqklholnc" path="res://assets/base/textures/background_1.png" id="1_qfjyw"]
+[ext_resource type="Texture2D" uid="uid://2cu6fwby77yr" path="res://assets/base/blue/card_back_resized.png" id="3_mipj0"]
+[ext_resource type="Texture2D" uid="uid://d11d3h1om8rki" path="res://assets/base/red/card_back_resized.png" id="4_l0f6g"]
+[ext_resource type="Texture2D" uid="uid://caygm5sc5k0um" path="res://assets/base/purple/card_back_resized.png" id="5_1min3"]
+[ext_resource type="Script" path="res://scenes/battle/deck_pile.gd" id="6_d8w0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6frvk"]
+bg_color = Color(0, 0, 0, 0.588235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q347"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4s3t"]
+bg_color = Color(0, 0, 0, 0.588235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7ve1"]
+bg_color = Color(0, 0, 0, 0.588235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Battle" type="Node2D" groups=["battle"]]
+script = ExtResource("1_6tu2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-65, 0)
+scale = Vector2(1.175, 1.175)
+texture = ExtResource("1_qfjyw")
+centered = false
+
+[node name="Battlefield" type="HBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 414.0
+offset_right = 1432.0
+offset_bottom = 657.0
+theme_override_constants/separation = 8
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Slot 1" type="Panel" parent="Battlefield"]
+custom_minimum_size = Vector2(172, 243)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_6frvk")
+
+[node name="Slot 2" type="Panel" parent="Battlefield"]
+custom_minimum_size = Vector2(172, 243)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_6frvk")
+
+[node name="Slot 3" type="Panel" parent="Battlefield"]
+custom_minimum_size = Vector2(172, 243)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_6frvk")
+
+[node name="Hand" type="HBoxContainer" parent="." groups=["hand"]]
+offset_left = 8.0
+offset_top = 657.0
+offset_right = 1440.0
+offset_bottom = 900.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="DeckPile" type="TextureButton" parent="."]
+offset_left = 1276.0
+offset_top = 665.0
+offset_right = 1432.0
+offset_bottom = 892.0
+texture_normal = ExtResource("3_mipj0")
+texture_pressed = ExtResource("4_l0f6g")
+texture_hover = ExtResource("4_l0f6g")
+texture_disabled = ExtResource("5_1min3")
+stretch_mode = 5
+script = ExtResource("6_d8w0v")
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_left = 1276.0
+offset_top = 556.0
+offset_right = 1432.0
+offset_bottom = 587.0
+theme_override_constants/outline_size = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_2q347")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y4s3t")
+text = "End Turn"
+
+[node name="InfoPanel" type="Panel" parent="."]
+offset_left = 1276.0
+offset_top = 595.0
+offset_right = 1432.0
+offset_bottom = 657.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l7ve1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GoldContainer" type="VBoxContainer" parent="InfoPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoldLabel" type="Label" parent="InfoPanel/HBoxContainer/GoldContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 2
+text = "Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldCount" type="Label" parent="InfoPanel/HBoxContainer/GoldContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnContainer" type="VBoxContainer" parent="InfoPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TurnLabel" type="Label" parent="InfoPanel/HBoxContainer/TurnContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 2
+text = "Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnCount" type="Label" parent="InfoPanel/HBoxContainer/TurnContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="DeckPile" to="DeckPile" method="_on_pressed"]
+[connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

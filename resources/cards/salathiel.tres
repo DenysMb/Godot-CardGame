@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://ccj6vao50350k"]
+
+[ext_resource type="Texture2D" uid="uid://d0oa5o07as3is" path="res://assets/units/angel.png" id="1_pco8p"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_2hmws"]
+
+[resource]
+script = ExtResource("2_2hmws")
+illustration = ExtResource("1_pco8p")
+card_name = "Salathiel"
+type = "Angel"
+description = "Fully heal an ally"
+gold = 3
+attack = 1
+health = 4

@@ -1,0 +1,206 @@
+[gd_scene load_steps=18 format=3 uid="uid://b3vsbgiothuaa"]
+
+[ext_resource type="Script" path="res://scenes/card/card.gd" id="1_10nxb"]
+[ext_resource type="Texture2D" uid="uid://bggy5sgy7h40x" path="res://assets/units/dragon.png" id="1_k5xox"]
+[ext_resource type="Resource" uid="uid://cuupmhemi8jkf" path="res://resources/cards/ding_dong.tres" id="2_mjpsa"]
+[ext_resource type="Texture2D" uid="uid://btfnasrx8v64t" path="res://assets/base/blue/card_border.png" id="2_v3u8p"]
+[ext_resource type="Texture2D" uid="uid://cqqkqj3nfsnd0" path="res://assets/base/objects/coin.png" id="3_umxoq"]
+[ext_resource type="Texture2D" uid="uid://o6m0qjlwwtpg" path="res://assets/base/red/card_border.png" id="4_fc05u"]
+[ext_resource type="Texture2D" uid="uid://7y5mfc4pe8lm" path="res://assets/base/objects/sword.png" id="4_xotvu"]
+[ext_resource type="Texture2D" uid="uid://1u0hoo8ojyt" path="res://assets/base/objects/heart.png" id="5_01ntq"]
+[ext_resource type="Script" path="res://scenes/card/states/state_machine.gd" id="7_kex8p"]
+[ext_resource type="Script" path="res://scenes/card/states/card_state_base.gd" id="8_uvx4b"]
+[ext_resource type="Script" path="res://scenes/card/states/card_state_clicked.gd" id="9_rntra"]
+[ext_resource type="Script" path="res://scenes/card/states/card_state_dragging.gd" id="10_04bh8"]
+[ext_resource type="Script" path="res://scenes/card/states/card_state_released.gd" id="11_xigfr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rd6g6"]
+font_size = 14
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qlanh"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gmnfo"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_72ahg"]
+font_size = 12
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_offset = Vector2(0, 0)
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(156, 227)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1284.0
+offset_bottom = -673.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(78, 113)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_10nxb")
+card_resource = ExtResource("2_mjpsa")
+metadata/_edit_group_ = true
+
+[node name="Illustration" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = 8.0
+offset_right = 65.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("1_k5xox")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v3u8p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BorderHovered" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_fc05u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 116
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CardName" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_rd6g6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Type
+"
+label_settings = SubResource("LabelSettings_qlanh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Description but long"
+label_settings = SubResource("LabelSettings_gmnfo")
+horizontal_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="GoldIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("3_umxoq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Gold" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "4"
+label_settings = SubResource("LabelSettings_72ahg")
+
+[node name="AttackIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("4_xotvu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Attack" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_72ahg")
+
+[node name="HealthIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("5_01ntq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Health" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+label_settings = SubResource("LabelSettings_72ahg")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("7_kex8p")
+initial_state = NodePath("Base")
+
+[node name="Base" type="Node" parent="StateMachine"]
+script = ExtResource("8_uvx4b")
+
+[node name="Clicked" type="Node" parent="StateMachine"]
+script = ExtResource("9_rntra")
+
+[node name="Dragging" type="Node" parent="StateMachine"]
+script = ExtResource("10_04bh8")
+
+[node name="Released" type="Node" parent="StateMachine"]
+script = ExtResource("11_xigfr")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

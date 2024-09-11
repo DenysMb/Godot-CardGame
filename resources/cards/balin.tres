@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://u1ei5a6xvkis"]
+
+[ext_resource type="Texture2D" uid="uid://c8pni0kepfnsk" path="res://assets/units/dwarf.png" id="1_qjs4c"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_u85dx"]
+
+[resource]
+script = ExtResource("2_u85dx")
+illustration = ExtResource("1_qjs4c")
+card_name = "Balin"
+type = "Dwarf"
+description = ""
+gold = 2
+attack = 2
+health = 3

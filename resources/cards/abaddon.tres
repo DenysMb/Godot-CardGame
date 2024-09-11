@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bduj2l0x5861q"]
+
+[ext_resource type="Texture2D" uid="uid://c4vk6kvptp7jc" path="res://assets/units/demon.png" id="1_7nu1o"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_iuup1"]
+
+[resource]
+script = ExtResource("2_iuup1")
+illustration = ExtResource("1_7nu1o")
+card_name = "Abaddon"
+type = "Demon"
+description = "Invoke 2 Locust 1/1 every turn"
+gold = 5
+attack = 4
+health = 5

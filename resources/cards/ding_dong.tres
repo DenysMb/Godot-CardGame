@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cuupmhemi8jkf"]
+
+[ext_resource type="Texture2D" uid="uid://dhpa0acjhss6d" path="res://assets/units/ape.png" id="1_0viy4"]
+[ext_resource type="Script" path="res://resources/card_resource.gd" id="2_yqo6v"]
+
+[resource]
+script = ExtResource("2_yqo6v")
+illustration = ExtResource("1_0viy4")
+card_name = "Ding Dong"
+type = "Animal"
+description = ""
+gold = 4
+attack = 3
+health = 5
